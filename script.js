@@ -4,7 +4,7 @@ var ano = data.getFullYear()
 var fano = document.getElementById('txtano')
 var res = document.querySelector('div#res')
 if (fano.value.length == 0 || fano.value > ano) {
-    window.alert('ERRO PANI NO SISTEMA ALGUEM NE DESCONFIGUROU')
+    window.alert('PREENCHA OS DADOS POR FAVOR!')
 } else {
     var fsex = document.getElementsByName('radsex')
     var idade = ano - Number(fano.value)
@@ -12,34 +12,34 @@ if (fano.value.length == 0 || fano.value > ano) {
     var img = document.createElement('img')
     img.setAttribute('id', 'foto')
     if (fsex[0].checked) {
-        genero = 'você é um corno'
+        genero = 'Você é um Homem'
         if (idade >= 0 && idade < 10) {
             //criança
-            img.setAttribute('src', 'nene2.png')
+            img.setAttribute('src', 'hcriança.png')
         } else if (idade < 21) {
             //jovem
-            img.setAttribute('src','men.png')
+            img.setAttribute('src','hjovem.png')
         } else if (idade < 50) {
             //adulto
-            img.setAttribute('src', 'homi.png')
+            img.setAttribute('src', 'adulto.png')
         } else {
             //idoso
-            img.setAttribute('src', 'veio.png')
+            img.setAttribute('src', 'idoso.png')
         }
     } else if (fsex[1].checked) {
-        genero = 'você é uma trouxa'
+        genero = 'Você é uma Mulher'
         if (idade >= 0 && idade < 10) {
             //criança
-            img.setAttribute('src', 'nene.png')
+            img.setAttribute('src', 'mcriança.png')
         } else if (idade < 21) {
             //jovem
-            img.setAttribute('src','muie.png')
+            img.setAttribute('src','mjovem.png')
         } else if (idade < 50) {
             //adulto
-            img.setAttribute('src', 'muiednv.png')
+            img.setAttribute('src', 'adulta.png')
         } else {
             //idoso
-            img.setAttribute('src', 'veia')
+            img.setAttribute('src', 'idosa.png')
         }
     }
     res.style.textAlign = 'center'
