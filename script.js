@@ -4,7 +4,7 @@ var ano = data.getFullYear()
 var fano = document.getElementById('txtano')
 var res = document.querySelector('div#res')
 if (fano.value.length == 0 || fano.value > ano) {
-    window.alert('PREENCHA OS DADOS POR FAVOR!')
+    window.alert('PREENCHA OS DADOS CORRETAMENTE POR FAVOR!')
 } else {
     var fsex = document.getElementsByName('radsex')
     var idade = ano - Number(fano.value)
@@ -12,13 +12,13 @@ if (fano.value.length == 0 || fano.value > ano) {
     var img = document.createElement('img')
     img.setAttribute('id', 'foto')
     if (fsex[0].checked) {
-        genero = 'Você é um Homem'
+        genero = 'você é um homem'
         if (idade >= 0 && idade < 10) {
             //criança
-            img.setAttribute('src', 'hcriança.png')
+            img.setAttribute('src', 'mcriança.png')
         } else if (idade < 21) {
             //jovem
-            img.setAttribute('src','hjovem.png')
+            img.setAttribute('src','mjovem.png')
         } else if (idade < 50) {
             //adulto
             img.setAttribute('src', 'adulto.png')
@@ -27,13 +27,13 @@ if (fano.value.length == 0 || fano.value > ano) {
             img.setAttribute('src', 'idoso.png')
         }
     } else if (fsex[1].checked) {
-        genero = 'Você é uma Mulher'
+        genero = 'você é uma mulher'
         if (idade >= 0 && idade < 10) {
             //criança
-            img.setAttribute('src', 'mcriança.png')
+            img.setAttribute('src', 'fcriança.png')
         } else if (idade < 21) {
             //jovem
-            img.setAttribute('src','mjovem.png')
+            img.setAttribute('src','fjovem.png')
         } else if (idade < 50) {
             //adulto
             img.setAttribute('src', 'adulta.png')
@@ -43,7 +43,7 @@ if (fano.value.length == 0 || fano.value > ano) {
         }
     }
     res.style.textAlign = 'center'
-    res.innerHTML = `Chegamos a conclusão de que ${genero} aos ${idade} anos!!`
+    res.innerHTML = `Identificamos que ${genero} de ${idade} anos!`
     res.appendChild(img) }
 
 }
